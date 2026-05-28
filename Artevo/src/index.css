@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght=0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme { 
+  --font-sans: 'DM Sans', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  
+  --color-primary: #8b0000;              
+  --color-button-primary: #900B00;       
+  --color-secondary-text-color: #636363; 
+  --color-text-last-price: #9c9c9c;
+}
+
+@utility container {
+  max-width: 1680px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;    
+  padding-right: 1rem;   
+  
+  @media (min-width: 640px) {
+    padding-left: 2.5rem;  
+  }
+}
