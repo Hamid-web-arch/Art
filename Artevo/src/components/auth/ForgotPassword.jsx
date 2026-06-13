@@ -1,4 +1,4 @@
-export default function ForgotPassword({ setStep, setIsAuthPage }) {
+export default function ForgotPassword({ setStep }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setStep("reset-password"); // Link göndərildi, yeni şifrə təyin etməyə keçirik
@@ -6,26 +6,10 @@ export default function ForgotPassword({ setStep, setIsAuthPage }) {
 
   return (
     <div className="w-full">
-      {/* Premium Geri Qayıtmaq Düyməsi */}
-      <div className="mb-6">
-        <button
-          onClick={() => setIsAuthPage && setIsAuthPage(false)}
-          className="group flex items-center gap-2 text-xs md:text-sm font-semibold tracking-widest uppercase text-gray-400 hover:text-black transition-colors duration-200"
-        >
-          <svg 
-            className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform duration-200" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
-          </svg>
-          Ana Səhifə
-        </button>
-      </div>
+     
 
       <h2 className="text-2xl md:text-3xl font-bold mb-2 font-sans text-center">Şifrəni unutdum</h2>
-      <p className="text-gray-500 text-xs md:text-sm mb-8 text-center max-w-[340px] mx-auto">
+      <p className="text-black text-xs md:text-sm mb-8 text-center max-w-[368px] mx-auto">
         Şifrənizi sıfırlamaq üçün qeydiyyatdan keçdiyiniz e-poçt ünvanınızı və ya telefon nömrənizi daxil edin.
       </p>
 

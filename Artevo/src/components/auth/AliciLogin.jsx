@@ -1,43 +1,21 @@
 import AuthInput from "./auth-input/AuthInput";
 import AuthButton from "./auth-button/AuthButton";
 
-export default function AliciLogin({ setStep, setIsAuthPage }) {
+export default function AliciLogin({ setStep }) {
   return (
     <div className="w-full">
-      {/* Premium Geri Qayıtmaq Düyməsi */}
-      <div className="mb-6">
-        <button
-          onClick={() => setIsAuthPage && setIsAuthPage(false)}
-          className="group flex items-center gap-2 text-xs md:text-sm font-semibold tracking-widest uppercase text-gray-400 hover:text-black transition-colors duration-200"
-        >
-          <svg 
-            className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform duration-200" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
-          </svg>
-          Ana Səhifə
-        </button>
-      </div>
+    
 
       {/* Tab / Başlıq Hissəsi */}
-      <div className="flex gap-6 mb-2 text-2xl md:text-3xl font-bold font-sans">
-        <h2 
-          className="text-gray-300 hover:text-black transition-colors cursor-pointer"
-          onClick={() => setStep("sanatkar-login")}
-        >
-          Sənətkar / Satıcı girişi
-        </h2>
-        <h2 className="text-black border-b-2 border-black pb-1">
+    {/* Tab / Başlıq Hissəsi */}
+      <div className="mb-10 font-inter text-black">
+        <h2 className="mb-[15px] text-2xl md:text-3xl font-bold ">
           Alıcı
         </h2>
+        <p className="text-black font-normal text-sm md:text-base ">
+          Yaradıcılıq dünyasına yenidən xoş gəlmisiniz.
+        </p>
       </div>
-
-      <p className="text-gray-500 text-sm md:text-base mb-8">
-        Yaradıcılıq dünyasına yenidən xoş gəlmisiniz.
-      </p>
 
       {/* Form strukturu */}
       <form onSubmit={(e) => e.preventDefault()} className="space-y-5">

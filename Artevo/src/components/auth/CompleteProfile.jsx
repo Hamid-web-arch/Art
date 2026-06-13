@@ -11,7 +11,7 @@ export default function CompleteProfile({ setStep, setIsAuthPage }) {
 
   return (
     <div className="w-full flex flex-col justify-center">
-      {/* Premium Geri Qayıtmaq Düyməsi */}
+      {/*  Geri Qayıtmaq Düyməsi */}
       <div className="mb-3">
         <button
           onClick={() => setIsAuthPage && setIsAuthPage(false)}
@@ -29,7 +29,7 @@ export default function CompleteProfile({ setStep, setIsAuthPage }) {
         </button>
       </div>
 
-      {/* Head text - Daha yığcam font ölçüləri */}
+      {/* Head text*/}
       <h2 className="text-center text-xl md:text-2xl font-bold font-sans tracking-tight text-black">
         Profil məlumatlarını tamamla
       </h2>
@@ -37,7 +37,7 @@ export default function CompleteProfile({ setStep, setIsAuthPage }) {
         Hesabınız üçün məlumat əlavə edin
       </p>
 
-      {/* Profile Avatar - Ölçü w-20-dən w-16-ya salındı */}
+      {/* Profile Avatar*/}
       <div className="relative w-16 h-16 mb-3 mx-auto">
         <div className="w-full h-full bg-gray-50 rounded-full flex items-center justify-center overflow-hidden border border-gray-200">
           <svg className="w-8 h-8 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
@@ -53,7 +53,7 @@ export default function CompleteProfile({ setStep, setIsAuthPage }) {
         </label>
       </div>
 
-      {/* Form - space-y-2 ilə daha sıx interfeys */}
+      {/* Form  */}
       <form onSubmit={handleSubmit} className="space-y-2">
         
         {/* Sənətkar Adı */}
@@ -87,7 +87,7 @@ export default function CompleteProfile({ setStep, setIsAuthPage }) {
           placeholder="Link əlavə edin"
         />
 
-        {/* Bio - İncəldilmiş textarea dizaynı */}
+        {/* Bio*/}
         <div className="flex flex-col gap-0.5">
           <label className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">
             BIO
@@ -101,7 +101,7 @@ export default function CompleteProfile({ setStep, setIsAuthPage }) {
           <span className="text-right text-[9px] text-gray-400 tracking-tight">Maksimum 300 simvol</span>
         </div>
 
-        {/* Yadda Saxla Düyməsi - h-10 və ya kiçik padding verərək yığcamlaşdıra bilərsən */}
+        {/* Yadda Saxla Düyməsi  */}
         <div className="pt-1">
           <AuthButton type="submit" variant="primary">
             Yadda saxla
