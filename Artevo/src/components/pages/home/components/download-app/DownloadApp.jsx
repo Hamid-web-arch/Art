@@ -1,6 +1,6 @@
-import IphoneImage from "../../assets/iphone.png";
-import GooglePlayImage from "../../assets/googleplay.png";
-import AppStoreImage from "../../assets/appstore.png";
+import IphoneImage from "../../../../../assets/home/iphone.png";
+import GooglePlayImage from "../../../../../assets/home/googleplay.png";
+import AppStoreImage from "../../../../../assets/home/appstore.png";
 
 export default function DownloadApp() {
     return (

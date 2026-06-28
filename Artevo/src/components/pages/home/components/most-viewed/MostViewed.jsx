@@ -1,10 +1,10 @@
-import enCoxBaxilanlar1 from "../../assets/en-cox-baxilanlar1.jpg";
-import enCoxBaxilanlar2 from "../../assets/en-cox-baxilanlar2.jpg";
-import enCoxBaxilanlar3 from "../../assets/en-cox-baxilanlar3.jpg";
-import enCoxBaxilanlar4 from "../../assets/en-cox-baxilanlar4.jpg";
+import enCoxBaxilanlar1 from "../../../../../assets/home/en-cox-baxilanlar1.jpg";
+import enCoxBaxilanlar2 from "../../../../../assets/home/en-cox-baxilanlar2.jpg";
+import enCoxBaxilanlar3 from "../../../../../assets/home/en-cox-baxilanlar3.jpg";
+import enCoxBaxilanlar4 from "../../../../../assets/home/en-cox-baxilanlar4.jpg";
 
 
-import HamisinaBaxButton from "../hamisina-bax-button/HamisinaBaxButton";
+import HamisinaBaxButton from "../../../../hamisina-bax-button/HamisinaBaxButton";
 
 export default function MostViewed() {
   const productsData = [

@@ -19,7 +19,7 @@
   padding-left: 1rem;    
   padding-right: 1rem;   
   
-  @media (min-width: 640px) {
+  /* @media (min-width: 640px) {
     padding-left: 2.5rem;  
-  }
+  } */
 }

@@ -1,7 +1,17 @@
 import AuthInput from "./auth-input/AuthInput";
 import AuthButton from "./auth-button/AuthButton";
+import { useNavigate } from "react-router-dom";
 
-export default function SanatkarLogin({ setStep }) {
+export default function SanatkarLogin({ setStep ,setIsAuthPage }) {
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // Bura autentifikasiya məntiqini (məsələn API çağırışı) əlavə edəcəksən.
+    // Hələlik birbaşa yönləndiririk:
+    setIsAuthPage(false); // Bu, App.jsx-də Header/Footer-i geri gətirəcək
+    navigate("/seller/dashboard");
+  };
   return (
     <div className="w-full">
       
@@ -16,7 +26,7 @@ export default function SanatkarLogin({ setStep }) {
         </p>
       </div>
       {/* Form strukturu */}
-      <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
+      <form  onSubmit={handleLogin} className="space-y-5">
 
         {/* Email / Telefon İnputu */}
         <AuthInput

@@ -1,14 +1,14 @@
-import enCoxBaxilanlar1 from "../../assets/trendde1.png";
-import enCoxBaxilanlar2 from "../../assets/trendde2.png";
-import enCoxBaxilanlar3 from "../../assets/trendde3.png";
-import enCoxBaxilanlar4 from "../../assets/trendde4.png";
-import enCoxBaxilanlar5 from "../../assets/trendde5.png";
-import enCoxBaxilanlar6 from "../../assets/trendde6.png";
-import enCoxBaxilanlar7 from "../../assets/trendde7.png";
-import enCoxBaxilanlar8 from "../../assets/trendde8.png";
+import enCoxBaxilanlar1 from "../../../../../assets/home/trendde1.png";
+import enCoxBaxilanlar2 from "../../../../../assets/home/trendde2.png";
+import enCoxBaxilanlar3 from "../../../../../assets/home/trendde3.png";
+import enCoxBaxilanlar4 from "../../../../../assets/home/trendde4.png";
+import enCoxBaxilanlar5 from "../../../../../assets/home/trendde5.png";
+import enCoxBaxilanlar6 from "../../../../../assets/home/trendde6.png";
+import enCoxBaxilanlar7 from "../../../../../assets/home/trendde7.png";
+import enCoxBaxilanlar8 from "../../../../../assets/home/trendde8.png";
 
 
-import HamisinaBaxButton from "../hamisina-bax-button/HamisinaBaxButton";
+import HamisinaBaxButton from "../../../../hamisina-bax-button/HamisinaBaxButton";
 
 export default function MostViewed() {
   const productsData = [

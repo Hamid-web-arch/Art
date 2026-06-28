@@ -1,9 +1,9 @@
-import category1 from "../../assets/category1.png";
-import category2 from "../../assets/category2.png";
-import category3 from "../../assets/category3.png";
-import category4 from "../../assets/category4.png";
+import category1 from "../../../../../assets/home/category1.png";
+import category2 from "../../../../../assets/home/category2.png";
+import category3 from "../../../../../assets/home/category3.png";
+import category4 from "../../../../../assets/home/category4.png";
 
-import HamisinaBaxButton from "../hamisina-bax-button/HamisinaBaxButton";
+import HamisinaBaxButton from "../../../../hamisina-bax-button/HamisinaBaxButton";
 
 export default function Categories() {
   const categoriesData = [

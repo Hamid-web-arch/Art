@@ -6,7 +6,7 @@ import ForgotPassword from "./ForgotPassword";
 import ResetPassword from "./ResetPassword";
 import CompleteProfile from "./CompleteProfile";
 
-import AuthIllustration from "../../assets/auth-illustration.png";
+import AuthIllustration from "../../assets/home/auth-illustration.png";
 
 export default function AuthLayout({ step, setStep, setIsAuthPage }) {
 
@@ -46,7 +46,7 @@ export default function AuthLayout({ step, setStep, setIsAuthPage }) {
             className="group flex items-center gap-4 text-xs md:text-sm font-medium tracking-widest text-black "
           >
             <svg width="15" height="26" viewBox="0 0 15 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12.75 1.5L1.5 12.75L12.75 24" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M12.75 1.5L1.5 12.75L12.75 24" stroke="black" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
 
             Ana səhifəyə qayıt

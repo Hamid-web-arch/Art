@@ -1,6 +1,10 @@
+import bgImg from "../../../../../assets/home/section-bg.jpg"
 export default function ExhibitionSection() {
   return (
-    <section className="w-full py-5 md:py-10 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('assets/section-bg.jpg')] bg-cover">
+    <section className="w-full py-5 md:py-10 bg-cover"
+      style={{ 
+        backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${bgImg})` 
+      }}>
       <div className="container">
         <button type="button" className="font-inter font-medium text-[14px] sm:text-[16px] md:text-[24px] text-white py-[5px] px-[24px] bg-white/40 rounded-[60px] cursor-pointer">
           Heykəltaraşlıq sərgisi
