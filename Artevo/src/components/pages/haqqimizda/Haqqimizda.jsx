@@ -1,5 +1,11 @@
+import MissionMobileSection from "./components/mission-mobile-section/MissionMobileSection";
+import Title from "./components/title/Title";
+
 export default function Haqqimizda() {
-    return (
-      <h1>Bura haqqimizdadir !</h1>
-    );
+  return (
+    <div>
+      <Title />
+      <MissionMobileSection />
+    </div>
+  );
 }
