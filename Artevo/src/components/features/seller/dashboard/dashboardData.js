@@ -41,13 +41,24 @@ export const statsData = [
   }
 ];
 
-export const analyticsData = [
+// dashboardData.js
+export const monthlyAnalyticsData = [
   { name: 'Yan', views: 400 },
-  { name: 'Fev', views: 600 },
-  { name: 'Mar', views: 450 },
-  { name: 'Apr', views: 900 },
-  { name: 'May', views: 700 },
-  { name: 'İyun', views: 1200 },
+  { name: 'Fev', views: 300 },
+  { name: 'Mar', views: 600 },
+  { name: 'Apr', views: 800 },
+  { name: 'May', views: 500 },
+  { name: 'İyun', views: 700 },
+];
+
+export const weeklyAnalyticsData = [
+  { name: 'B.e', views: 120 },
+  { name: 'Ç.a', views: 90 },
+  { name: 'Çər', views: 150 },
+  { name: 'C.a', views: 200 },
+  { name: 'Cüm', views: 180 },
+  { name: 'Şən', views: 60 },
+  { name: 'Baz', views: 40 },
 ];
 
 import abstrakt from '../../../../assets/seller/abstrakt-gece.jpg';

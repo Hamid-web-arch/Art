@@ -53,7 +53,7 @@ function AppContent() {
               <Route path="/" element={<Home />} />
               <Route path="/sergiler" element={<Sergiler />} />
               <Route path="/keshf-et" element={<KesfEt />} />
-              <Route path="/haqqimizda" element={<Haqqimizda />} />
+              <Route path="/haqqimizda" element={<Haqqimizda />} /> 
               <Route path="/elaqe" element={<Elaqe />} />
 
               {/* Satıcı Paneli */}
@@ -71,7 +71,7 @@ function AppContent() {
 
           {/* Şərt: Satıcı səhifəsində deyiliksə, ana Footer görünsün */}
           {!isSellerPage && <Footer />}
-        </>
+        </> 
       )}
     </div>
   );
