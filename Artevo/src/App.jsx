@@ -12,11 +12,9 @@ import Elaqe from "./components/pages/elaqe/Elaqe";
 import NotFoundPage from "./components/pages/not-found/NotFoundPage";
 import AuthLayout from "./components/auth/AuthLayout";
 import DashboardPage from "./components/features/seller/dashboard/DashboardPage";
-import CreateProductPage from "./components/features/seller/mehsul-yarat/CreateProductPage";
+import CreateProductPage from "./components/features/seller/create-product/CreateProductPage";
+import CreateExhibitionPage from "./components/features/seller/create-exhibiton/CreateExhibitionPage"
 import Sergilerim from "./components/features/seller/sergilerim/SergilerimPage";
-
-// Routes içinə əlavə et:
-<Route path="/seller/create-product" element={<CreateProductPage />} />
 
 // App komponenti sadəcə Router-i saxlayır
 export default function App() {
@@ -60,6 +58,7 @@ function AppContent() {
               <Route path="/seller/dashboard" element={<DashboardPage />} />
               <Route path="/seller/create-product" element={<CreateProductPage />} />
               <Route path="/seller/sergilerim" element={<Sergilerim />} />
+              <Route path="/seller/create-exhibition" element={<CreateExhibitionPage />} />
               <Route path="/seller/statistika" element={<div>Statistika (hazır deyil)</div>} />
               <Route path="/seller/mesajlar" element={<div>Mesajlar (hazır deyil)</div>} />
               <Route path="/seller/cuzdan-odenisler" element={<div>Cüzdan (hazır deyil)</div>} />

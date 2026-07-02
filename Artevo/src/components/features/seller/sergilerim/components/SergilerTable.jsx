@@ -17,14 +17,14 @@ function ChevronRightIcon() {
 }
 
 const statusStyles = {
-  AKTİV: "bg-[#E8F5E9] text-[#2E7D32]",
-  "GÖZLƏNİLƏN": "bg-[#E3EFFD] text-[#2563EB]",
-  KEÇMİŞ: "bg-[#FBEAEA] text-[#900B00]",
+  AKTİV: "bg-[#E6F4E9] text-[#00901A]",
+  "GÖZLƏNİLƏN": "bg-[#DBF3FF] text-[#006F8F]",
+  KEÇMİŞ: "bg-[#FFF0EF] text-[#5F5E5E]",
 };
 
 const performansBarColor = {
   red: "bg-[#900B00]",
-  blue: "bg-[#2563EB]",
+  blue: "bg-[#006F8F]",
 };
 
 export default function SergilerTable({ sergiler, pagination }) {

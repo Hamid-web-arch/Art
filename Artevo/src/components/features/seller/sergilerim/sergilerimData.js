@@ -1,5 +1,8 @@
 // src/features/seller/sergilerim/sergilerimData.js
-
+import bannerImage from "../../../../assets/seller/sergilerim/sergilerim-banner.png"
+import AbstraktVizyonlar from "../../../../assets/seller/sergilerim/Abstrakt Vizyonlar.jpg"
+import HeykelterasliqIndi from "../../../../assets/seller/sergilerim/Heykəltəraşlıq İndi.jpg"
+import PortretUstalari from "../../../../assets/seller/sergilerim/Portret Ustaları.jpg"
 export const sergiTabs = [
   { key: "hamisi", label: "Bütün sərgilər", count: 12 },
   { key: "aktiv", label: "Aktiv", count: 4 },
@@ -11,8 +14,7 @@ export const featuredSergi = {
   id: 1,
   baslik: "Müasir Əks-sədalar: Rəqəmsal Reallıq",
   tarix: "12 Oktyabr - 15 Noyabr, 2023",
-  sekil:
-    "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=1200&q=80",
+  sekil:bannerImage,
   ziyaretci: "2.4k",
   istirak: "84%",
   biletSatisi: "14.2k",
@@ -27,8 +29,7 @@ export const digerSergiler = [
   {
     id: 2,
     ad: "Abstrakt Vizyonlar",
-    sekil:
-      "https://images.unsplash.com/photo-1549887534-1541e9326642?w=200&q=80",
+    sekil: AbstraktVizyonlar,
     status: "gozlenilen",
     statusLabel: "GÖZLƏNİLƏN",
     tarix: "01 Dek, 2023",
@@ -38,8 +39,7 @@ export const digerSergiler = [
   {
     id: 3,
     ad: "Heykəltəraşlıq İndi",
-    sekil:
-      "https://images.unsplash.com/photo-1554188248-986adbb73be4?w=200&q=80",
+    sekil: HeykelterasliqIndi ,
     status: "kechmish",
     statusLabel: "KEÇMİŞ",
     tarix: "15 Avq - 30 Sen, 2023",
@@ -49,8 +49,7 @@ export const digerSergiler = [
   {
     id: 4,
     ad: "Portret Ustaları",
-    sekil:
-      "https://images.unsplash.com/photo-1577720580479-7d839d829c73?w=200&q=80",
+    sekil:PortretUstalari,
     status: "aktiv",
     statusLabel: "AKTİV",
     tarix: "05 Okt - 20 Dek, 2023",

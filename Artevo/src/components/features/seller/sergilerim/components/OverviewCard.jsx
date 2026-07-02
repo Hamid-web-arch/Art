@@ -2,21 +2,21 @@
 
 function TrendingUpIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M3 17l6-6 4 4 8-8" />
-      <path d="M15 7h6v6" />
-    </svg>
+  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="40" height="40" rx="8" fill="#FFF0EF"/>
+<path d="M11.4 26L10 24.6L17.4 17.15L21.4 21.15L26.6 16H24V14H30V20H28V17.4L21.4 24L17.4 20L11.4 26Z" fill="#900B00"/>
+</svg>
+
   );
 }
 
 function UsersIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <circle cx="9" cy="8" r="3.5" />
-      <path d="M2.5 19c0-3.3 2.9-6 6.5-6s6.5 2.7 6.5 6" />
-      <circle cx="17" cy="8" r="2.5" />
-      <path d="M16 13.2c2.6.5 4.5 2.7 4.5 5.3" />
-    </svg>
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="40" height="40" rx="8" fill="#DBF3FF"/>
+<path d="M9 28V25.2C9 24.6333 9.14583 24.1125 9.4375 23.6375C9.72917 23.1625 10.1167 22.8 10.6 22.55C11.6333 22.0333 12.6833 21.6458 13.75 21.3875C14.8167 21.1292 15.9 21 17 21C18.1 21 19.1833 21.1292 20.25 21.3875C21.3167 21.6458 22.3667 22.0333 23.4 22.55C23.8833 22.8 24.2708 23.1625 24.5625 23.6375C24.8542 24.1125 25 24.6333 25 25.2V28H9ZM27 28V25C27 24.2667 26.7958 23.5625 26.3875 22.8875C25.9792 22.2125 25.4 21.6333 24.65 21.15C25.5 21.25 26.3 21.4208 27.05 21.6625C27.8 21.9042 28.5 22.2 29.15 22.55C29.75 22.8833 30.2083 23.2542 30.525 23.6625C30.8417 24.0708 31 24.5167 31 25V28H27ZM17 20C15.9 20 14.9583 19.6083 14.175 18.825C13.3917 18.0417 13 17.1 13 16C13 14.9 13.3917 13.9583 14.175 13.175C14.9583 12.3917 15.9 12 17 12C18.1 12 19.0417 12.3917 19.825 13.175C20.6083 13.9583 21 14.9 21 16C21 17.1 20.6083 18.0417 19.825 18.825C19.0417 19.6083 18.1 20 17 20ZM27 16C27 17.1 26.6083 18.0417 25.825 18.825C25.0417 19.6083 24.1 20 23 20C22.8167 20 22.5833 19.9792 22.3 19.9375C22.0167 19.8958 21.7833 19.85 21.6 19.8C22.05 19.2667 22.3958 18.675 22.6375 18.025C22.8792 17.375 23 16.7 23 16C23 15.3 22.8792 14.625 22.6375 13.975C22.3958 13.325 22.05 12.7333 21.6 12.2C21.8333 12.1167 22.0667 12.0625 22.3 12.0375C22.5333 12.0125 22.7667 12 23 12C24.1 12 25.0417 12.3917 25.825 13.175C26.6083 13.9583 27 14.9 27 16ZM11 26H23V25.2C23 25.0167 22.9542 24.85 22.8625 24.7C22.7708 24.55 22.65 24.4333 22.5 24.35C21.6 23.9 20.6917 23.5625 19.775 23.3375C18.8583 23.1125 17.9333 23 17 23C16.0667 23 15.1417 23.1125 14.225 23.3375C13.3083 23.5625 12.4 23.9 11.5 24.35C11.35 24.4333 11.2292 24.55 11.1375 24.7C11.0458 24.85 11 25.0167 11 25.2V26ZM17 18C17.55 18 18.0208 17.8042 18.4125 17.4125C18.8042 17.0208 19 16.55 19 16C19 15.45 18.8042 14.9792 18.4125 14.5875C18.0208 14.1958 17.55 14 17 14C16.45 14 15.9792 14.1958 15.5875 14.5875C15.1958 14.9792 15 15.45 15 16C15 16.55 15.1958 17.0208 15.5875 17.4125C15.9792 17.8042 16.45 18 17 18Z" fill="#006F8F"/>
+</svg>
+
   );
 }
 
@@ -26,22 +26,22 @@ export default function OverviewCard({ data }) {
       <h3 className="text-base font-medium text-black mb-4">Ümumi Baxış</h3>
 
       <div className="flex flex-col gap-3">
-        <div className="flex items-center justify-between bg-[#FBEAEA] rounded-lg px-4 py-3">
-          <div className="flex items-center gap-2 text-sm text-[#900B00]">
+        <div className="flex items-center justify-between bg-[#F3F5F7] rounded-lg px-4 py-3">
+          <div className="flex items-center gap-2 text-sm text-black">
             <TrendingUpIcon />
             <span>Böyümə</span>
           </div>
-          <span className="text-sm font-medium text-[#900B00]">
+          <span className="text-sm font-medium text-[#00901A]">
             {data.boyume}
           </span>
         </div>
 
-        <div className="flex items-center justify-between bg-[#EAF1FB] rounded-lg px-4 py-3">
-          <div className="flex items-center gap-2 text-sm text-[#2563EB]">
+        <div className="flex items-center justify-between bg-[#F3F5F7] rounded-lg px-4 py-3">
+          <div className="flex items-center gap-2 text-sm text-black">
             <UsersIcon />
             <span>Yeni Kolleksionerlər</span>
           </div>
-          <span className="text-sm font-medium text-[#2563EB]">
+          <span className="text-sm font-medium text-black">
             {data.yeniKoleksionerler}
           </span>
         </div>

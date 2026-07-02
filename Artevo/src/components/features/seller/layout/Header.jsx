@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import ProfileImage from "../../../../assets/seller/profile-avatar.jpg"
+import ProfileImage from "../../../../assets/seller/dashboard/profile-avatar.jpg"
 
 export default function Header() {
   const location = useLocation();

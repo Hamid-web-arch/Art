@@ -61,9 +61,9 @@ export const weeklyAnalyticsData = [
   { name: 'Baz', views: 40 },
 ];
 
-import abstrakt from '../../../../assets/seller/abstrakt-gece.jpg';
-import hendesi from '../../../../assets/seller/hendesi-realliq.jpg';
-import qirmizi from '../../../../assets/seller/qirmizi-sukut.jpg';
+import abstrakt from '../../../../assets/seller/dashboard/abstrakt-gece.jpg';
+import hendesi from '../../../../assets/seller/dashboard/hendesi-realliq.jpg';
+import qirmizi from '../../../../assets/seller/dashboard/qirmizi-sukut.jpg';
 
 export const artworkData = [
   {

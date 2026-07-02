@@ -25,12 +25,12 @@ export default function SergilerimPage() {
     <SellerLayout>
       <div className="flex flex-col gap-6">
         {/* Başlıq və Sərgi Yarat düyməsi */}
-        <div className="flex justify-between items-start gap-4 font-inter">
-          <p className="text-[#5F5E5E]">
+        <div className="flex items-center justify-between gap-4 font-inter">
+          <p className="text-black text-[24px] font-inter font-medium">
             Sizin kuratorluq etdiyiniz bütün aktiv və arxivləşdirilmiş sərgilər.
           </p>
           <button
-            onClick={() => navigate("/seller/create-sergi")}
+            onClick={() => navigate("/seller/create-exhibition")}
             className="bg-[#900B00] text-white px-8 py-4 rounded-lg font-medium whitespace-nowrap"
           >
             Sərgi yarat
