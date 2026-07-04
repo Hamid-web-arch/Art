@@ -15,6 +15,8 @@ import DashboardPage from "./components/features/seller/dashboard/DashboardPage"
 import CreateProductPage from "./components/features/seller/create-product/CreateProductPage";
 import CreateExhibitionPage from "./components/features/seller/create-exhibiton/CreateExhibitionPage"
 import Sergilerim from "./components/features/seller/sergilerim/SergilerimPage";
+import Bildirisler from "./components/pages/bildirisler/Bildirisler";
+import Settings from "./components/pages/settings/Settings";
 
 // App komponenti sadəcə Router-i saxlayır
 export default function App() {
@@ -53,6 +55,8 @@ function AppContent() {
               <Route path="/keshf-et" element={<KesfEt />} />
               <Route path="/haqqimizda" element={<Haqqimizda />} /> 
               <Route path="/elaqe" element={<Elaqe />} />
+              <Route path="/bildirisler" element={<Bildirisler />} />
+              <Route path="/settings" element={<Settings />} />
 
               {/* Satıcı Paneli */}
               <Route path="/seller/dashboard" element={<DashboardPage />} />
