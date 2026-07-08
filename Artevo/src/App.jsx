@@ -17,6 +17,7 @@ import CreateExhibitionPage from "./components/features/seller/create-exhibiton/
 import Sergilerim from "./components/features/seller/sergilerim/SergilerimPage";
 import Bildirisler from "./components/pages/bildirisler/Bildirisler";
 import Settings from "./components/pages/settings/Settings";
+import Statistics from "./components/features/seller/statistika/Statistics";
 
 // App komponenti sadəcə Router-i saxlayır
 export default function App() {
@@ -63,7 +64,7 @@ function AppContent() {
               <Route path="/seller/create-product" element={<CreateProductPage />} />
               <Route path="/seller/sergilerim" element={<Sergilerim />} />
               <Route path="/seller/create-exhibition" element={<CreateExhibitionPage />} />
-              <Route path="/seller/statistika" element={<div>Statistika (hazır deyil)</div>} />
+              <Route path="/seller/statistika" element={<Statistics />} />
               <Route path="/seller/mesajlar" element={<div>Mesajlar (hazır deyil)</div>} />
               <Route path="/seller/cuzdan-odenisler" element={<div>Cüzdan (hazır deyil)</div>} />
               <Route path="/seller/ayarlar" element={<div>Ayarlar (hazır deyil)</div>} />
