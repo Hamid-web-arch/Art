@@ -1,5 +1,12 @@
+import { NavLink } from "react-router-dom";
+
 export default function MobileMenu({ isOpen, onClose }) {
-  const navItems = ["Sərgilər", "Kəşf et", "Haqqımızda", "Əlaqə"];
+  const navItems = [
+    { label: "Sərgilər", path: "/sergiler" },
+    { label: "Kəşf et", path: "/keshf-et" },
+    { label: "Haqqımızda", path: "/haqqimizda" },
+    { label: "Əlaqə", path: "/elaqe" }
+  ];
 
   return (
     <div id="mobile-menu"
@@ -19,7 +26,7 @@ export default function MobileMenu({ isOpen, onClose }) {
                <button id="menu-close" 
                onClick={onClose}
                type="button"
-                   className="text-black hover:text-primary transition-colors p-1" aria-label="Menyunu bağla">
+                   className="text-black hover:text-[#900B00] transition-colors p-1" aria-label="Menyunu bağla">
                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2"
@@ -31,9 +38,17 @@ export default function MobileMenu({ isOpen, onClose }) {
             <ul className="flex flex-col gap-5 text-lg font-medium text-black">
                {navItems.map((item, index) => (
                    <li key={index}>
-                    <a href="#" className="transition-colors hover:text-primary block py-1.5">
-                         {item}
-                    </a>
+                    <NavLink
+                      to={item.path}
+                      onClick={onClose}
+                      className={({ isActive }) =>
+                        `transition-colors block py-1.5 ${
+                          isActive ? "text-[#900B00] font-semibold" : "text-black hover:text-[#900B00]"
+                        }`
+                      }
+                    >
+                         {item.label}
+                    </NavLink>
                    </li>
                  ))}
             </ul>
