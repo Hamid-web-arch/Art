@@ -54,7 +54,7 @@ export default function SergilerimPage() {
             <PremiumBanner onYukle={() => console.log("Premium hesabat yüklənir...")} />
           </div>
         </div>
-
+ 
         {/* Digər sərgilər cədvəli */}
         <SergilerTable sergiler={digerSergiler} pagination={sergiPagination} />
       </div>
