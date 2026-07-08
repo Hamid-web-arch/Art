@@ -4,25 +4,25 @@ import { monthlyAnalyticsData , weeklyAnalyticsData } from '../dashboardData';
 
 export default function AnalyticsChart() {
   const [activeTab, setActiveTab] = useState('Aylıq');
-
   const chartData = activeTab === 'Aylıq' ? monthlyAnalyticsData : weeklyAnalyticsData;
 
   return (
-    <div className="bg-[#FFF5F5] p-6 rounded-2xl border border-red-100 h-full">
-      <div className="flex justify-between items-center mb-6">
+    <div className="bg-[#FFF5F5] p-4 sm:p-6 rounded-2xl border border-red-100 h-full">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 mb-6">
         <div>
           <h3 className="font-bold text-lg">Baxış Analytics</h3>
           <p className="text-sm text-gray-400">Son 6 ayın trendi</p>
         </div>
-        <div className="flex bg-gray-100 rounded-lg p-1 gap-1">
+        <div className="flex bg-gray-100 rounded-lg p-1 gap-1 self-start sm:self-auto">
           {['Aylıq', 'Həftəlik'].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-3 py-1 text-sm rounded-md transition-all duration-200 ${activeTab === tab
+              className={`px-3 py-1 text-sm rounded-md transition-all duration-200 ${
+                activeTab === tab
                   ? 'bg-[#900B00] text-white shadow-sm'
                   : 'text-gray-500 hover:text-gray-700'
-                }`}
+              }`}
             >
               {tab}
             </button>
@@ -30,7 +30,7 @@ export default function AnalyticsChart() {
         </div>
       </div>
 
-      <ResponsiveContainer width="100%" height="75%">
+      <ResponsiveContainer width="100%" height={260} className="sm:!h-[75%]">
         <AreaChart data={chartData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
           <defs>
             <linearGradient id="colorViews" x1="0" y1="0" x2="0" y2="1">
