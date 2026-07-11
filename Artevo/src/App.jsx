@@ -18,6 +18,7 @@ import Sergilerim from "./components/features/seller/sergilerim/SergilerimPage";
 import Bildirisler from "./components/pages/bildirisler/Bildirisler";
 import Settings from "./components/pages/settings/Settings";
 import Statistics from "./components/features/seller/statistika/Statistics";
+import AliciPage from "./components/features/alici/aliciPage/AliciPage";
 
 // App komponenti sadəcə Router-i saxlayır
 export default function App() {
@@ -36,12 +37,13 @@ function AppContent() {
   // useLocation indi düzgün yerdədir
   const location = useLocation();
   const isSellerPage = location.pathname.startsWith("/seller");
+  const isAliciPage = location.pathname.startsWith("/alici");
 
   return (
     <div className="min-h-screen flex flex-col justify-between">
 
       {/* Şərt: Auth-da deyiliksə VƏ Satıcı səhifəsində deyiliksə, ana Header görünsün */}
-      {!isAuthPage && !isSellerPage && (
+      {!isAuthPage && !isSellerPage && !isAliciPage && (
         <Header setIsAuthPage={setIsAuthPage} setStep={setStep} />
       )}
 
@@ -69,12 +71,15 @@ function AppContent() {
               <Route path="/seller/cuzdan-odenisler" element={<div>Cüzdan (hazır deyil)</div>} />
               <Route path="/seller/ayarlar" element={<div>Ayarlar (hazır deyil)</div>} />
 
+               {/* Alıcı Paneli */}
+              <Route path="/alici" element={<AliciPage />} />
+
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </main>
 
           {/* Şərt: Satıcı səhifəsində deyiliksə, ana Footer görünsün */}
-          {!isSellerPage && <Footer />}
+          {!isSellerPage && !isAliciPage && <Footer />}
         </> 
       )}
     </div>

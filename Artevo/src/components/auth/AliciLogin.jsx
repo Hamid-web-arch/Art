@@ -10,7 +10,7 @@ export default function AliciLogin({ setStep, setIsAuthPage }) {
     // Bura autentifikasiya məntiqini (məsələn API çağırışı) əlavə edəcəksən.
     // Hələlik birbaşa yönləndiririk:
     setIsAuthPage(false); // Bu, App.jsx-də Header/Footer-i geri gətirəcək
-    navigate("/");
+    navigate("/alici");
   };
   return (
     <div className="w-full">
