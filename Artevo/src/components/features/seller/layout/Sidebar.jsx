@@ -5,7 +5,7 @@ const navItems = [
   {
     path: "/seller/dashboard",
     label: "Dashboard",
-    matchPaths: ["/seller/dashboard", "/seller/create-product"], 
+    matchPaths: ["/seller/dashboard", "/seller/create-product"],
     icon: (
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M10 6V0H18V6H10ZM0 10V0H8V10H0ZM10 18V8H18V18H10ZM0 18V12H8V18H0ZM2 8H6V2H2V8ZM12 16H16V10H12V16ZM12 4H16V2H12V4ZM2 16H6V14H2V16Z" fill="currentColor" />
@@ -98,17 +98,16 @@ export default function Sidebar({ isOpen, onClose }) {
           <Logo />
           <nav className="flex flex-col gap-2 mt-10">
             {navItems.map((item) => {
-              const paths=item.matchPaths || [item.path];
-              const isActive =paths.some((p)=> location.pathname.startsWith(p)); 
+              const paths = item.matchPaths || [item.path];
+              const isActive = (item.matchPaths ?? [item.path]).some(p => location.pathname.startsWith(p)); 
               return (
                 <div
                   key={item.path}
                   onClick={() => handleNavigate(item.path)}
-                  className={`py-3 px-4 lg:px-8 rounded-lg lg:rounded-l-lg lg:rounded-r-none flex items-center gap-2 cursor-pointer transition-colors whitespace-nowrap ${
-                    isActive
+                  className={`py-3 px-4 lg:px-8 rounded-lg lg:rounded-l-lg lg:rounded-r-none flex items-center gap-2 cursor-pointer transition-colors whitespace-nowrap ${isActive
                       ? "bg-[#900B00] text-white"
                       : "text-[#9C9C9C] hover:text-[#5F5E5E]"
-                  }`}
+                    }`}
                 >
                   {item.icon}
                   <span className="font-inter font-medium text-sm lg:text-base">{item.label}</span>

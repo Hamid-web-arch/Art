@@ -1,9 +1,17 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SellerLayout from '../layout/SellerLayout';
+import StepIndicator from './components/StepIndicator';
+import Step1Form from './components/Step1Form';
+import Step2Yoxlanis from './components/Step2Yoxlanis';
+import Step3Tamamlandi from './components/Step3Tamamlandi';
 
-export default function CreateProductPage() {
+export default function CreateExhibitionPage() {
     const navigate = useNavigate();
+
+    // step: 0 = əsas sərgi forması, 1-3 = təsdiq mərhələləri
+    const [step, setStep] = useState(0);
+
     const [formData, setFormData] = useState({
         name: '',
         category: '',
@@ -16,22 +24,18 @@ export default function CreateProductPage() {
         coverImage: null,
         virtualGallery: '',
         isOnline: false,
-
     });
 
     const [collaboratorInput, setCollaboratorInput] = useState('');
     const [dragOver, setDragOver] = useState(false);
     const [imagePreview, setImagePreview] = useState(null);
-    const [status, setStatus] = useState("online")
+    const [status, setStatus] = useState("online");
 
-    const handleStatusChange = (newStatus) => {
-        setStatus(newStatus);
-    };
+    const handleStatusChange = (newStatus) => setStatus(newStatus);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
-
 
     const handleCollaboratorAdd = (e) => {
         if (e.key === 'Enter' && collaboratorInput.trim()) {
@@ -70,21 +74,56 @@ export default function CreateProductPage() {
 
     const handleGallerySelect = (e) => {
         const file = e.target.files[0];
-        if (file) {
-            setFormData({ ...formData, galleryFile: file });
-        }
+        if (file) setFormData({ ...formData, galleryFile: file });
     };
 
-    const handleSubmit = (e)=>{
-          e.preventDefault()
-         const finalData= {...formData,isOnline:status==="online"}
-         console.log(finalData)
-    }
+    // "Yadda saxla" basıldıqda mərhələlərə keç
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const finalData = { ...formData, isOnline: status === "online" };
+        console.log(finalData);
+        setStep(1); // ← navigate yox, step state dəyişir
+    };
 
     const inputClass = "border border-[#9c9c9c] rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#900B00] w-full bg-transparent";
     const labelClass = "text-xs font-medium text-[#9c9c9c] uppercase tracking-wider";
 
+    // ── Mərhələlər görünüşü (step 1, 2, 3) ──────────────────────────
+    if (step >= 1) {
+        return (
+            <SellerLayout currentStep={step}
+             onStepBack={() => setStep(step - 1)}>
+                <div className="flex flex-col gap-6 font-inter ">
+                    
 
+                    {/* Başlıq */}
+                    <div>
+                        <h1 className="text-[40px] font-medium text-black leading-tight">
+                            Sərginin Təsdiqlənməsi
+                        </h1>
+                        <p className="text-[#5F5E5E] mt-1">
+                            Yeni sərgi yaratmaq üçün aşağıdakı sahələri doldurun.
+                        </p>
+                    </div>
+
+                    {/* Step indikator */}
+                    <StepIndicator currentStep={step} />
+
+                    {/* Aktiv mərhələ */}
+                    {step === 1 && (
+                        <Step1Form
+                            onNext={() => setStep(2)}
+                            onCancel={() => setStep(0)}
+                        />
+                    )}
+                    {step === 2 && <Step2Yoxlanis onTamamlandi={() => setStep(3)} />}
+                    {step === 3 && <Step3Tamamlandi />}
+                </div>
+            </SellerLayout>
+        );
+    }
+
+    // ── Əsas sərgi forması (step 0) ─────────────────────────────────
     return (
         <SellerLayout>
             <div className="flex flex-col gap-6">
@@ -95,9 +134,18 @@ export default function CreateProductPage() {
                         <p className="text-sm text-gray-500 mt-1">Yeni sərgi yaratmaq üçün aşağıdakı xanaları doldurun.</p>
                     </div>
                     <div className="flex items-center gap-4">
-                        <button onClick={() => handleStatusChange("offline")} className={`${status === "online" ? "bg-[#FFF0EF] text-[#900B00]" : "bg-[#900b00] text-white"} font-normal py-1 px-6 rounded-2xl`} >Offline</button>
-
-                        <button onClick={() => handleStatusChange("online")} className={`${status === "online" ? "bg-[#900b00] text-white" : "bg-[#FFF0EF] text-[#900B00]"} font-normal py-1 px-6 rounded-2xl`} >online</button>
+                        <button
+                            onClick={() => handleStatusChange("offline")}
+                            className={`${status === "online" ? "bg-[#FFF0EF] text-[#900B00]" : "bg-[#900b00] text-white"} font-normal py-1 px-6 rounded-2xl`}
+                        >
+                            Offline
+                        </button>
+                        <button
+                            onClick={() => handleStatusChange("online")}
+                            className={`${status === "online" ? "bg-[#900b00] text-white" : "bg-[#FFF0EF] text-[#900B00]"} font-normal py-1 px-6 rounded-2xl`}
+                        >
+                            Online
+                        </button>
                     </div>
                 </div>
 
@@ -106,60 +154,29 @@ export default function CreateProductPage() {
                     <div className="grid grid-cols-2 gap-8">
                         <div className="flex flex-col gap-1">
                             <label className={labelClass}>Məhsul adı</label>
-                            <input
-                                name="name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                placeholder="Sərginin adını daxil edin"
-                                className={inputClass}
-                            />
+                            <input name="name" value={formData.name} onChange={handleChange} placeholder="Sərginin adını daxil edin" className={inputClass} />
                         </div>
                         <div className="flex flex-col gap-1">
                             <label className={labelClass}>Kateqoriya</label>
-                            <input
-                                name="category"
-                                value={formData.category}
-                                onChange={handleChange}
-                                placeholder="Müasir İncəsənət"
-                                className={inputClass}
-                            />
+                            <input name="category" value={formData.category} onChange={handleChange} placeholder="Müasir İncəsənət" className={inputClass} />
                         </div>
                     </div>
 
                     {/* Qısa təsvir */}
                     <div className="grid grid-cols-1 gap-1">
                         <label className={labelClass}>Qısa təsvir</label>
-                        <input
-                            name="shortDescription"
-                            value={formData.shortDescription}
-                            onChange={handleChange}
-                            placeholder="Sərgi haqqında ətraflı məlumat"
-                            className={`${inputClass} pb-16`}
-                        />
-
+                        <input name="shortDescription" value={formData.shortDescription} onChange={handleChange} placeholder="Sərgi haqqında ətraflı məlumat" className={`${inputClass} pb-16`} />
                     </div>
-                     
-                    {/* Start date and End date */}
+
+                    {/* Tarixlər */}
                     <div className="grid grid-cols-2 gap-8">
                         <div className="flex flex-col gap-1">
                             <label className={labelClass}>Başlama tarixi</label>
-                            <input
-                                name="startDate"
-                                value={formData.startDate}
-                                onChange={handleChange}
-                                placeholder="dd/mm/yyyy"
-                                className={inputClass}
-                            />
+                            <input name="startDate" value={formData.startDate} onChange={handleChange} placeholder="dd/mm/yyyy" className={inputClass} />
                         </div>
                         <div className="flex flex-col gap-1">
                             <label className={labelClass}>Bitmə tarixi</label>
-                            <input
-                                name="endDate"
-                                value={formData.endDate}
-                                onChange={handleChange}
-                                placeholder="dd/mm/yyyy"
-                                className={inputClass}
-                            />
+                            <input name="endDate" value={formData.endDate} onChange={handleChange} placeholder="dd/mm/yyyy" className={inputClass} />
                         </div>
                     </div>
 
@@ -167,23 +184,11 @@ export default function CreateProductPage() {
                     <div className="grid grid-cols-2 gap-8">
                         <div className="flex flex-col gap-1">
                             <label className={labelClass}>Qiymət</label>
-                            <input
-                                name="price"
-                                value={formData.price}
-                                onChange={handleChange}
-                                placeholder="0.00"
-                                className={inputClass}
-                            />
+                            <input name="price" value={formData.price} onChange={handleChange} placeholder="0.00" className={inputClass} />
                         </div>
                         <div className="flex flex-col gap-1">
                             <label className={labelClass}>Məkan</label>
-                            <input
-                                name="location"
-                                value={formData.location}
-                                onChange={handleChange}
-                                placeholder="Qalereya və ya ünvan"
-                                className={inputClass}
-                            />
+                            <input name="location" value={formData.location} onChange={handleChange} placeholder="Qalereya və ya ünvan" className={inputClass} />
                         </div>
                     </div>
 
@@ -207,7 +212,7 @@ export default function CreateProductPage() {
                         </div>
                     </div>
 
-                    {/* Qapaq Şəkil yükləmə */}
+                    {/* Qapaq şəkli */}
                     <div className="flex flex-col gap-1">
                         <label className={labelClass}>Qapaq şəkli</label>
                         <div
@@ -276,22 +281,13 @@ export default function CreateProductPage() {
                             </svg>
                             <p className="text-sm text-gray-500">Video və ya 3D model faylı yükləyin</p>
                             <p className="text-xs text-gray-400">MP4, GLB (Max. 50MB)</p>
-
-                            <input
-                                id="galleryFileInput"
-                                type="file"
-                                accept="video/*,.glb,.gltf"
-                                className="hidden"
-                                onChange={handleGallerySelect}
-                            />
-
-                            {/* Link yazmaq istəsə, alternativ kimi ayrıca sahə */}
+                            <input id="galleryFileInput" type="file" accept="video/*,.glb,.gltf" className="hidden" onChange={handleGallerySelect} />
                             <input
                                 name="virtualGallery"
                                 value={formData.virtualGallery}
                                 onChange={handleChange}
                                 placeholder="və ya linki bura yapışdırın"
-                                onClick={(e) => e.stopPropagation()}  // vacib! aşağıda izah edirəm
+                                onClick={(e) => e.stopPropagation()}
                                 className="text-sm text-center outline-none bg-transparent w-full mt-2"
                             />
                         </div>
@@ -306,9 +302,10 @@ export default function CreateProductPage() {
                         >
                             Ləğv et
                         </button>
-                        <button 
-                        type="submit" 
-                        className="px-12 py-3 rounded-lg bg-[#900B00] text-white text-sm font-medium hover:bg-[#7a0900]">
+                        <button
+                            type="submit"
+                            className="px-12 py-3 rounded-lg bg-[#900B00] text-white text-sm font-medium hover:bg-[#7a0900]"
+                        >
                             Yadda saxla
                         </button>
                     </div>
