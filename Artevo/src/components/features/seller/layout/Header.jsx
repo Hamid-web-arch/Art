@@ -2,14 +2,31 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import ProfileImage from "../../../../assets/seller/dashboard/profile-avatar.jpg"
 
 
-const backButtonPaths =[ '/seller/create-product',
-  '/seller/create-exhibition',];
+const backRoutes = {
+  '/seller/create-product': '/seller/dashboard',
+  '/seller/create-exhibition': '/seller/sergilerim',
+};
 
-export default function Header({ onMenuClick }) {
+export default function Header({ onMenuClick, currentStep, onStepBack }) {
   const location = useLocation();
   const navigate = useNavigate();
-  const isCreateProduct =backButtonPaths.some((p)=> location.pathname.startsWith(p)); ;
 
+  const backTarget = Object.entries(backRoutes).find(([path]) =>
+    location.pathname.startsWith(path)
+  );
+
+  const handleBack = () => {
+    if (currentStep > 1) {
+      // Mərhələlər içindədirsə bir addım geri
+      onStepBack();
+    } else if (currentStep === 1) {
+      // Step 1-dədirsə formaya qayıt
+      onStepBack();
+    } else {
+      // Əsas formadadırsa müvafiq route-a get
+      navigate(backTarget[1]);
+    }
+  };
   return (
     <header className="py-4 px-4 sm:px-6 bg-white flex justify-between items-center">
       {/* Sol tərəf - Hamburger (mobil) + Geri düyməsi */}
@@ -24,9 +41,9 @@ export default function Header({ onMenuClick }) {
           </svg>
         </button>
 
-        {isCreateProduct && (
+       {backTarget && (
           <button
-            onClick={() => navigate('/seller/dashboard')}
+            onClick={handleBack}
             className="text-[#900B00] text-sm font-medium hover:underline whitespace-nowrap"
           >
             ← Geri

@@ -64,6 +64,7 @@ function AppContent() {
               <Route path="/seller/create-product" element={<CreateProductPage />} />
               <Route path="/seller/sergilerim" element={<Sergilerim />} />
               <Route path="/seller/create-exhibition" element={<CreateExhibitionPage />} />
+
               <Route path="/seller/statistika" element={<Statistics />} />
               <Route path="/seller/mesajlar" element={<div>Mesajlar (hazır deyil)</div>} />
               <Route path="/seller/cuzdan-odenisler" element={<div>Cüzdan (hazır deyil)</div>} />

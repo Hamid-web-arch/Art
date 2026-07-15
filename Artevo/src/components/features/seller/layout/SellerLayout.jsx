@@ -3,14 +3,14 @@ import { useState } from 'react';
 import Sidebar from './Sidebar';
 import Header from './Header';
 
-export default function SellerLayout({ children }) {
+export default function SellerLayout({ children , currentStep, onStepBack }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
     <div className="flex h-screen bg-[#F9FAFB] overflow-hidden">
       <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
       <div className="flex-1 flex flex-col overflow-hidden min-w-0">
-        <Header onMenuClick={() => setIsSidebarOpen(true)} />
+        <Header onMenuClick={() => setIsSidebarOpen(true)} currentStep={currentStep} onStepBack={onStepBack}  />
         <main className="flex-1 overflow-y-auto p-4 sm:p-6">
           {children}
         </main>
